@@ -1,0 +1,553 @@
+
+/* =========================
+   General Settings
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   Header / Navbar
+========================= */
+.header {
+    width: 100%;
+    min-height: 65px;
+    padding: 5px 4%;
+    background-color: black;
+    border-bottom: 1px solid goldenrod;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.header img {
+    width: 110px;
+    height: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+}
+
+.header img:hover {
+    transform: scale(1.08);
+}
+
+.header a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: "Franklin Gothic Medium",
+        "Arial Narrow", Arial, sans-serif;
+
+    white-space: nowrap;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.header a:hover {
+    color: goldenrod;
+    transform: translateY(-2px);
+}
+
+.header a:hover::after {
+    transform: scaleX(1);
+}
+
+/* =========================
+   Hero Section
+========================= */
+.middle {
+    width: 100%;
+    min-height: 500px;
+    padding: 30px 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.middle .left {
+    width: 50%;
+    min-width: 0;
+    height: 440px;
+}
+
+.middle .left img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.middle .right {
+    width: 45%;
+    min-width: 0;
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.middle .right p {
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    text-shadow: 3px 2px 8px red;
+    font-size: clamp(22px, 3vw, 40px);
+    line-height: 1.5;
+
+    font-family: "Franklin Gothic Medium",
+        "Arial Narrow", Arial, sans-serif;
+
+    overflow-wrap: anywhere;
+}
+
+.middle .right a {
+    text-decoration: none;
+}
+
+.middle .right a button {
+    width: 200px;
+    min-height: 50px;
+    padding: 10px 15px;
+
+    color: white;
+    background-color: red;
+    font-size: 17px;
+    font-weight: bold;
+
+    border: 2px solid red;
+    border-radius: 6px;
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.middle .right a button:hover {
+    background-color: black;
+    color: red;
+    transform: scale(1.05);
+}
+
+/* =========================
+   Section Title
+========================= */
+.name {
+    width: 100%;
+    min-height: 140px;
+    padding: 25px 15px;
+    margin: 25px auto 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    text-align: center;
+}
+
+.name p {
+    color: red;
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: bold;
+}
+
+.name h1 {
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: bolder;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   Hero Cards
+========================= */
+.cards {
+    width: 100%;
+    padding: 15px 3% 35px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    justify-content: center;
+    align-items: stretch;
+}
+
+.cards .card {
+    width: 100%;
+    min-width: 0;
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    margin: 0;
+    padding: 12px;
+
+    background-color: rgba(103, 104, 109, 0.25);
+    border: 2px solid goldenrod;
+    border-radius: 12px;
+
+    overflow: hidden;
+    transition: transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(218, 32, 32, 0.3);
+    border-color: rgb(218, 32, 32);
+}
+
+.cards .card a {
+    display: block;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cards .card a img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+}
+
+.cards .card p {
+    width: 100%;
+    margin: 0;
+    padding: 8px 5px;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(16px, 1.5vw, 20px);
+    overflow-wrap: anywhere;
+}
+
+.cards .card a:hover {
+    color: goldenrod;
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+    width: 350%;
+    min-height: 280px;
+    padding: 30px 5%;
+
+    background-color: rgba(116, 0, 0, 0.826);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.footer .heros,
+.footer .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin: 0;
+    text-align: center;
+}
+
+.footer a {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    text-transform: capitalize;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: goldenrod;
+}
+
+.footer p {
+    width: 100%;
+    color: white;
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* =========================
+   Tablets
+========================= */
+@media (max-width: 900px) {
+    .header {
+        padding: 8px 3%;
+        gap: 15px;
+    }
+
+    .header img {
+        width: 85px;
+    }
+
+    .header a {
+        font-size: 14px;
+    }
+
+    .middle {
+        gap: 25px;
+        padding: 25px 3%;
+    }
+
+    .middle .left {
+        height: 350px;
+    }
+
+    .middle .right {
+        gap: 20px;
+    }
+
+    .middle .right a button {
+        width: 170px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .cards .card a img {
+        height: 280px;
+    }
+}
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 600px) {
+    .header {
+        min-height: auto;
+        padding: 10px 12px;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .header img {
+        width: 100%;
+        height: 45px;
+        margin: 0;
+        object-fit: contain;
+    }
+
+    .header a {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .header a::after {
+        bottom: -4px;
+    }
+
+    .middle {
+        min-height: auto;
+        padding: 20px 15px 30px;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .middle .left {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .middle .left img {
+        object-fit: cover;
+    }
+
+    .middle .right {
+        width: 100%;
+        min-height: auto;
+        gap: 20px;
+    }
+
+    .middle .right p {
+        font-size: clamp(22px, 6vw, 30px);
+    }
+
+    .middle .right a button {
+        width: min(200px, 80vw);
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    .name {
+        min-height: 120px;
+        padding: 20px 12px;
+        margin: 10px auto;
+    }
+
+    .name p {
+        font-size: 19px;
+    }
+
+    .name h1 {
+        font-size: 28px;
+    }
+
+    .cards {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 10px 15px 30px;
+    }
+
+    .cards .card {
+        width: 100%;
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .cards .card a img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    .cards .card p {
+        font-size: 18px;
+    }
+
+    .footer {
+        padding: 30px 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .footer .heros,
+    .footer .social {
+        width: 100%;
+        margin: 0;
+        gap: 12px;
+    }
+
+    .footer p {
+        margin-top: 5px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================
+   Very Small Phones
+========================= */
+@media (max-width: 350px) {
+    .header {
+        gap: 12px;
+    }
+
+    .header a {
+        font-size: 12px;
+    }
+
+    .middle {
+        padding: 15px 10px 25px;
+    }
+
+    .middle .right p {
+        font-size: 21px;
+    }
+
+    .name h1 {
+        font-size: 24px;
+    }
+
+    .cards {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .cards .card a img {
+        aspect-ratio: 3 / 4;
+    }
+
+    .footer {
+        padding: 25px 10px;
+    }
+}
+
+/* =========================
+   Reduced Motion
+========================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
