@@ -1,0 +1,23 @@
+$mostafa:rgb(244, 5, 5);
+$ayman:rgb(0, 217, 255);
+@mixin fonts{
+    background-color:$ayman ;
+    color: $mostafa;
+    text-align: center;
+    text-decoration: line-through;
+    font-weight:bolder ;
+    text-transform: capitalize;
+    font-size: xx-large;
+    transition: 2s;
+}
+
+// sass css/style.scss css/style.css
+
+p{
+    @include fonts();
+    &:hover{
+        background-color: darken($ayman, 10%);
+    }
+        
+    
+}
